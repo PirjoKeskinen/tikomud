@@ -19,3 +19,15 @@ class Item:
 
     def is_empty(self) -> bool:
         return self.qty <= 0
+
+    # Compatibility helpers
+    def to_tuple(self):
+        return (self.name, self.qty, self.desc)
+
+    def to_dict(self):
+        return {
+            "key": self.key,
+            "name": self.name,
+            "quantity": self.qty,
+            "description": self.desc,
+        }
